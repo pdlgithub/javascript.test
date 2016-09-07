@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp" ng-controller="myController">
+		Greetings from javascript/test/client/destructuring.html
+	</body>
+	<script>
+		"use strict"
+
+		var app = angular.module('myApp', []);
+		app.controller('myController', function($scope) {
+
+			let x = [1,2,3,4,5,6]
+
+			var [y,z] = x
+
+			console.log(y,z)
+
+			let obj = {id:1,
+						name: 'one',
+						description: 'some description of one'
+					}
+
+			var {id, description} = obj
+			console.log(id,description)
+
+		});
+
+		
+	</script>
+</html>

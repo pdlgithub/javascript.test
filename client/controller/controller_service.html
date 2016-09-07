@@ -1,0 +1,78 @@
+<!--references to inter-controller communication 
+	http://www.angulartutorial.net/2014/03/communicate-with-controllers-in-angular.html
+ 	http://stsc3000.github.io/blog/2013/10/26/a-tale-of-frankenstein-and-binding-to-service-values-in-angular-dot-js/
+-->
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myModule">
+		<h2>Greetings from javascript/test/client/controller.html</h2>
+
+		<div ng-controller="firstController">
+			<input type="button" ng-click="doClick()" value="send data to Controller2"> 
+			<div>Message: {{message}}</div>
+
+			<br/>
+			<div>
+				<ul>
+					<li ng-repeat = "item in names">{{item|myFilter2: 3}}</li>
+				</ul>
+		</div>
+
+		<br/><br/>
+
+		<div ng-controller="secondController">
+			<div>Message: {{message}}</div>
+			<div style="color:red;">Service Message (binding to myService.message): {{myService.message}}</div>
+		</div>
+
+	</body>
+
+	<script>
+		"use strict"
+		const app = angular.module('myModule', [])
+
+		// my service - used to communicate between controllers (in listeners bind to service, NOT server.message)
+		app.service('myService', function () {
+	    	var message = "service default message here";
+	    })
+
+
+		// firstController
+		let controller1 = app.controller('firstController', ['$rootScope', '$scope', '$http', 'myService', 'myService1', function($rootScope, $scope, $http, myService, myService1) {
+			$scope.message = "FIRST controller here !!!"
+			$scope.names = ['Jani', 'Carl', 'Margareth', 'Hege', 'Joe', 'Gustav', 'Birgit', 'Mary', 'Kai'];
+
+			console.log(myService1.get());
+
+
+
+			// button click
+			$scope.doClick = function() {
+				console.log("onClick() hit")
+
+				// pass data between controllers via service (see service above)
+				myService.message = "message in SERVICE set from first controller"	// works
+			}
+
+		}]);	// end controller1
+
+
+		let controller2 = app.controller('secondController', ['$rootScope', '$scope', '$http', 'myService', function($rootScope, $scope, $http, myService) {
+			$scope.message = "Second Controller here !!!"
+
+
+			// bind scope to service - only the service notifies when changed not the service properties. ???
+			// note: if we attempted $scope.message = myService.message the view would not be notified of change as this operation
+			//			COPIES the myService.message property to the $scope.message instead of REFERENCING the property
+			$scope.myService = myService
+			
+		}]); 	// end controller2
+
+	// promise .then can take two functions (success, error) or just one and use the catch	
+	</script>
+	<!-- service script needed to be loaded after app script -->
+	<script src="/controller/service.js"></script>
+<script src="/controller/filter.js"></script>
+</html>

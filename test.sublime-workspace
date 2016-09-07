@@ -1,0 +1,302 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"m_",
+				"m_objDate"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"res",
+				"responseTxt"
+			],
+			[
+				"con",
+				"contactlist"
+			],
+			[
+				"contact",
+				"contactlist"
+			],
+			[
+				"c",
+				"contact"
+			],
+			[
+				"my",
+				"myFunction"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"cont",
+				"contact"
+			],
+			[
+				"perso",
+				"person3"
+			],
+			[
+				"per",
+				"person2"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"w",
+				"Web Inspector"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/peter/dev/javascript/test/client"
+	],
+	"file_history":
+	[
+		"/home/peter/dev/javascript/test/client/view/firstView.html",
+		"/home/peter/dev/javascript/test/server.js",
+		"/home/peter/dev/javascript/test/client/controller/controllerFirst.js",
+		"/home/peter/dev/javascript/test/client/controller/controllerSecond.js",
+		"/home/peter/dev/javascript/test/client/controller/controller_constant.html",
+		"/home/peter/dev/javascript/test/client/view/secondView.html",
+		"/home/peter/dev/javascript/test/client/index.html",
+		"/home/peter/dev/javascript/test/client/controller/controller_provider.html",
+		"/home/peter/dev/javascript/test/client/controller/factory.js",
+		"/home/peter/dev/javascript/test/client/controller/controller_factory.html",
+		"/home/peter/dev/javascript/test/client/controller/provider.js",
+		"/home/peter/dev/javascript/test/client/controller/controller_filter.html",
+		"/home/peter/dev/javascript/test/client/controller/constant.js",
+		"/home/peter/dev/javascript/test/client/controller/service.js",
+		"/home/peter/dev/javascript/test/client/controller/controller_service.html",
+		"/home/peter/dev/javascript/test/client/controller/filter.js",
+		"/home/peter/dev/javascript/test/prototype.js",
+		"/home/peter/dev/javascript/test/client/fetch.html",
+		"/home/peter/dev/javascript/test/client/q.html",
+		"/home/peter/dev/javascript/test/client/promise.html",
+		"/home/peter/dev/javascript/test/client/controller/controller_watch.html",
+		"/home/peter/dev/javascript/test/client/controller/controller_watchApply.html",
+		"/home/peter/dev/javascript/test/client/controller/controller_rootScope.html",
+		"/home/peter/dev/javascript/test/client/restParameters.html",
+		"/home/peter/dev/javascript/test/client/destructuring.html",
+		"/home/peter/dev/javascript/test/client/service/service.html",
+		"/home/peter/dev/javascript/test/client/controller/controller.html",
+		"/home/peter/dev/javascript/test/client/restParameters.js",
+		"/home/peter/dev/javascript/javascript.generators/generator.js",
+		"/home/peter/dev/javascript/javascript.generators/generatorRequest-Promise.js",
+		"/home/peter/dev/javascript/javascript.generators/pdlExport.js",
+		"/home/peter/dev/javascript/javascript.generators/server.js",
+		"/home/peter/dev/javascript/javascript.generators/generatorSimple.js",
+		"/home/peter/dev/javascript/javascript.generators/generatorWithCallback.js",
+		"/home/peter/dev/javascript/javascript.generators/public/index.html",
+		"/home/peter/dev/javascript/javascript.generators/public/generator.html",
+		"/home/peter/dev/javascript/javascript.generators/public/closure.html",
+		"/home/peter/dev/javascript/javascript.generators/arrayEs5.js",
+		"/home/peter/dev/javascript/javascript.generators/build/javascript.generators.min.js",
+		"/home/peter/dev/javascript/javascript.generators/array2.js",
+		"/home/peter/dev/javascript/javascript.generators/package.json",
+		"/home/peter/dev/javascript/javascript.generators/Gruntfile.js",
+		"/home/peter/dev/javascript/javascript.generators/public/demo.txt",
+		"/home/peter/dev/javascript/javascript.generators/anotherSimpleGenerator.js",
+		"/home/peter/dev/javascript/javascript.generators/node_modules/co/index.js",
+		"/home/peter/dev/javascript/javascript.generators/array.js",
+		"/home/peter/dev/javascript/javascript.generators/promise.js",
+		"/home/peter/dev/javascript/javascript.generators/doesRequestHaveAPromise.js",
+		"/home/peter/dev/javascript/javascript.generators/anotherGenerator.js",
+		"/home/peter/dev/basics/generator.js",
+		"/home/peter/dev/mysql/app.js",
+		"/home/peter/dev/basics/first.js",
+		"/home/peter/dev/basics/passingArray.js",
+		"/home/peter/dev/basics/constructor.js",
+		"/home/peter/dev/basics/stream.js",
+		"/home/peter/dev/basics/regex.js",
+		"/home/peter/dev/basics/map.js",
+		"/home/peter/dev/basics/reduce.js",
+		"/home/peter/dev/basics/readfilewritefile.js",
+		"/home/peter/dev/basics/readPipedFileChainedMap.js",
+		"/home/peter/dev/basics/readPipedFileForEachAndMap.js",
+		"/home/peter/angular/MEAN/contactlistapp/public/controllers/controller.js",
+		"/home/peter/.config/sublime-text-3/Packages/Web Inspector/swi.sublime-settings",
+		"/home/peter/.config/sublime-text-3/Packages/User/swi.sublime-settings",
+		"/home/peter/.config/sublime-text-3/Packages/swi.sublime-settings",
+		"/home/peter/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/peter/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/peter/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/peter/angular/MEAN/contactlistapp/public/index.html",
+		"/home/peter/angular/MEAN/contactlistapp/server.js",
+		"/usr/JavaScript.sublime-build"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Gruntfile.js"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"  "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "test.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 625.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Projects\\MEAN\\proj-mean-demo.sublime-project"
+			]
+		],
+		"width": 475.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 266.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

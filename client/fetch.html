@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp" ng-controller="myController">
+		Greetings from javascript/test/client/fetch.html
+		<div>Message: {{delay}}</div>
+	</body>
+	<script>
+		"use strict"
+		const app = angular.module('myApp', [])
+		const controller = app.controller('myController', function($scope) {
+			// url (required), options (optional)
+			fetch('http://localhost:3000/something', {
+				method: 'get'
+			}).then(function(response) {
+				console.log('response', response)
+
+				 if (response.status !== 200) {  
+			        console.log('Looks like there was a problem. Status Code: ' +  
+			          response.status);  
+			        return;  
+			      }
+
+			      response.json().then(function(data) {
+			      	console.log('data', data)
+			      	$scope.delay = data
+			      	$scope.$apply()
+			      });
+
+			}).catch(function(err) {
+				// Error :(
+				console.log('Error')
+			});
+		});	// end controller
+		
+	</script>
+</html>

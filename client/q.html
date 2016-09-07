@@ -1,0 +1,39 @@
+<!-- $q used to modify standard callback functions to promises -->
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="myController">
+			Greetings from javascript/test/client/fetch.html
+			<div>Message: {{delay}}</div>
+		</div>
+	</body>
+
+	<script>
+		"use strict"
+		const app = angular.module('myApp', [])
+		let controller = app.controller('myController', ['$scope', '$http', '$q', function($scope, $http, $q) {
+			console.log('calling server')
+
+			// promisify the $.ajax callback 
+			var myDeferred = $q.defer()
+			$.ajax('http://localhost:3000/delayx/1000', {
+				err: function(err) { myDeferred.reject(err) },
+				success: function(data) {myDeferred.resolve(data)}
+			});
+
+			// now let's use the promise
+			var myPromise = myDeferred.promise;
+			myPromise.then(function(data){
+				console.log(data)
+				$scope.delay = data
+			}).catch(function(error) {
+				console.log(error)
+			})
+
+		}]);	// end controller
+		
+	</script>
+</html>

@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script> -->
+		<script src="js/angular-ui-router.min.js"></script>
+	</head>
+	<body ng-app="myModule">
+		<h2>Using ui-router instead of ngRouter</h2>
+
+		<div><a ui-sref="firstState">First</a>&nbsp;<a ui-sref="secondState">Second</a></div>	<!-- note # required -->
+
+		<div ng-controller="controllerFirst">
+			<div ui-view=""> <!-- ui-view instead of ng-view because we are useing ui-router instead of ngrouter -->
+			</div>
+		</div>
+
+	</body>
+
+	<script>
+		"use strict"
+		const app = angular.module('myModule', ['ui.router'])
+		.config( 
+		  function($stateProvider) {
+		    $stateProvider
+		      .state('firstState', {
+		      	url: "first",
+		        templateUrl: 'view/firstView.html',	// to be changed
+		        controller: 'controllerFirst',
+		        controllerAs: 'first'
+		      })
+		      .state('secondState', {
+		      	url: "second",
+		        templateUrl: 'view/secondView.html',	// to be changed
+		        controller: 'controllerSecond',
+		        controllerAs: 'second'
+		      });
+		      
+        });
+		    
+
+	</script>
+
+	<!-- filter script needed to be loaded after app script -->
+	<script src="/controller/controllerFirst.js"></script>
+	<script src="/controller/controllerSecond.js"></script>
+	<script src="/controller/filter.js"></script>
+</html>

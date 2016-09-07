@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myModule">
+		<h2>Greetings from javascript/test/client/controller_provider.html</h2>
+
+		<div ng-controller="firstController">
+			<br/>
+			
+		</div>
+
+	</body>
+
+	<!--provider script needed to be loaded before app script -->
+
+	<!-- *** PROBLEM WITH INCLUE *** -->
+	<!-- <script src="/controller/provider.js"></script> -->
+		<script>
+
+		"use strict"
+		const app = angular.module('myModule', [])
+		app.provider("game", function () {
+		    var type;
+		    return {
+		      setType: function (value) {
+		        type = value;
+		      },
+		      $get: function () {
+		        return {
+		          title: type + "Craft"
+		        };
+		      }
+		    };
+		  });
+		  
+		app.config(['gameProvider', function (gameProvider) {
+		  gameProvider.setType("CRAZY, CRAZY, CRAZY ");
+		}]);
+
+		// firstController
+		let controller1 = app.controller('firstController', ['$scope', 'game', function($scope, game) {				// for some reason need to wrap $scope.names in parenthesis
+			console.log(game.title)
+			
+		}]);	// end controller1
+
+
+	</script>
+	
+</html>

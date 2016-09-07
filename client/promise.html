@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="myController">
+			Greetings from javascript/test/client/fetch.html
+			<div>Message: {{delay}}</div>
+		</div>
+	</body>
+
+	<script>
+		"use strict"
+		const app = angular.module('myApp', [])
+		let controller = app.controller('myController', ['$scope', '$http', function($scope, $http) {
+			console.log('calling server')
+
+			$http.get('http://localhost:3000/delay/1000', {
+				method: 'get'
+			}).then(function(response) {
+				console.log('response', response)
+
+				 if (response.status !== 200) {  
+			        console.log('Looks like there was a problem. Status Code: ' +  response.status);  
+			        return;  
+			      }
+
+		      	$scope.delay = response.data
+		      	console.log('data', response.data)
+
+
+			}).catch(function(err) {
+				// Error :(
+				console.log('Error')
+			});
+
+		}]);	// end controller
+	
+	// promise .then can take two functions (success, error) or just one and use the catch	
+	</script>
+</html>

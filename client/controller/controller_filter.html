@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myModule">
+		<h2>Greetings from javascript/test/client/controller_filter.html</h2>
+
+		<div ng-controller="firstController">
+			<br/>
+			<div>
+				<ul>
+					<li ng-repeat = "item in names">{{item|myFilter2: 3}}</li>
+				</ul>
+		</div>
+
+	</body>
+
+	<script>
+		"use strict"
+		const app = angular.module('myModule', [])
+
+
+		// firstController
+		let controller1 = app.controller('firstController', ['$scope', '$filter', function($scope, $filter) {
+
+			$scope.names = ['Jani', 'Carl', 'Margareth', 'Hege', 'Joe', 'Gustav', 'Birgit', 'Mary', 'Kai'];
+
+			$scope.names.forEach(function(item, index) {
+				console.log($filter("myFilter")(item));	
+				//console.log(item);
+			})
+
+
+			$scope.names.forEach(function(item, index) {
+				console.log($filter("myFilter2")(item, 3));	
+				//console.log(item);
+			})
+				// for some reason need to wrap $scope.names in parenthesis
+			
+		}]);	// end controller1
+
+
+	</script>
+	<!-- filter script needed to be loaded after app script -->
+	<script src="/controller/filter.js"></script>
+</html>

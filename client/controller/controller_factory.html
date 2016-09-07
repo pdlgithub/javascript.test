@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myModule">
+		<h2>Greetings from javascript/test/client/controller_factory.html</h2>
+
+		<div ng-controller="firstController">
+			<br/>
+			
+		</div>
+
+	</body>
+
+	<script>
+		"use strict"
+		const app = angular.module('myModule', [])
+
+
+		// firstController
+		let controller1 = app.controller('firstController', ['$scope', 'myFactory', function($scope, myFactory) {
+			console.log(myFactory.sayHello());
+			
+				// for some reason need to wrap $scope.names in parenthesis
+			
+		}]);	// end controller1
+
+
+	</script>
+	<!-- filter script needed to be loaded after app script -->
+	<script src="/controller/factory.js"></script>
+</html>

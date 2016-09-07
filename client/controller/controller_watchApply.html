@@ -1,0 +1,92 @@
+<!--references to inter-controller communication 
+	http://www.angulartutorial.net/2014/03/communicate-with-controllers-in-angular.html
+ 	http://stsc3000.github.io/blog/2013/10/26/a-tale-of-frankenstein-and-binding-to-service-values-in-angular-dot-js/
+-->
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myModule">
+		<h2>Greetings from javascript/test/client/controller.html</h2>
+
+		<div ng-controller="firstController">
+			<input type="button" ng-click="doClick()" value="send data to Controller2"> 
+			<div>Time: {{time}}</div>
+			<div>Object Time: {{objTime.time}}</div>		</div>
+
+		<br/><br/>
+
+		<div ng-controller="secondController">
+
+		</div>
+
+	</body>
+
+	<!-- Script here -->
+	<script>
+		"use strict"
+		const app = angular.module('myModule', [])
+
+
+		// *** Controller1 ***
+		let controller1 = app.controller('firstController', ['$rootScope', '$scope', '$http', '$interval', function($rootScope, $scope, $http, $interval) {
+			
+			$scope.time
+			$scope.objTime = {time: new Date(), somethingElse: 'xxx'}
+
+			// set up a variable then watch it watch
+			let m_date
+			let m_objDate = {time: new Date(), somethingElse: 'fsfsfsfsfd'}
+			$scope.objTime.time = m_objDate.time
+
+	        $scope.$watch(function(){return m_date}, 
+	        	function(newVal){
+	        		$scope.time = newVal
+	        	}
+	        )
+
+
+		    $interval(function () {
+		    	m_date = Date()
+		    	m_objDate.time = Date()
+		    	//console.log(m_date)
+		    }, 1000);
+
+
+		}]);	// end controller1
+
+
+
+		// *** Controller2 ***
+		let controller2 = app.controller('secondController', ['$rootScope', '$scope', '$http', function($rootScope, $scope, $http) {
+			
+
+			// by watching the myService.message property we can trigger change in $scope.message
+			// $scope.$watch(	// works
+			// 	function(){return myService.message},
+
+			// 	function(newVal) {
+			// 		$scope.message = newVal;
+			// 	}
+			// )
+
+
+			// $watch - creates a watch on some variable 
+			// at key points in application AngularJS calls the $scope.$digest() function which iterates through all watches
+			// executes first functions to get a value, if the value is different from the value previously fetched then the second  function (listener) is excecuted to set a value
+			$scope.$watch(	// works
+				function(){return $rootScope.message},
+
+				function(newVal) {
+					$scope.message = newVal;
+				}
+			)
+
+			// how about if we place a watch on $rootScope variable
+
+			
+		}]); 	// end controller2
+
+	// promise .then can take two functions (success, error) or just one and use the catch	
+	</script>
+</html>
